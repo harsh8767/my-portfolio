@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harsh Chavan — Python Developer &amp; ML Enthusiast</title>
+<meta name="description" content="Portfolio of Harsh Gopinath Chavan — Computer Engineering Graduate, Python &amp; Data Science Enthusiast, Machine Learning Enthusiast.">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- Set the theme before first paint so there is no flash. Light is the default. -->
+<script>
+  (function () {
+    var savedTheme = null;
+    try { savedTheme = localStorage.getItem('portfolio-theme'); } catch (err) {}
+    document.documentElement.dataset.theme = savedTheme === 'dark' ? 'dark' : 'light';
+    document.documentElement.classList.add('js');
+  })();
+</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== Scroll progress bar ===== -->
+<div class="scroll-progress"><div class="scroll-progress__bar" id="scrollBar"></div></div>
+
+<!-- ===== Background layers ===== -->
+<div class="bg-layer">
+  <div class="blob blob--one"></div>
+  <div class="blob blob--two"></div>
+  <div class="blob blob--three"></div>
+  <div class="grid-overlay"></div>
+  <canvas id="particles"></canvas>
+</div>
+
+<!-- ===== Navigation ===== -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#home" class="nav__logo">H<span class="accent">C</span><span class="nav__logo-dot">.</span></a>
+
+    <nav class="nav__links" id="navLinks">
+      <a href="#home" class="nav__link active" data-nav>Home</a>
+      <a href="#about" class="nav__link" data-nav>About</a>
+      <a href="#experience" class="nav__link" data-nav>Experience</a>
+      <a href="#projects" class="nav__link" data-nav>Projects</a>
+      <a href="#skills" class="nav__link" data-nav>Skills</a>
+      <a href="#education" class="nav__link" data-nav>Education</a>
+      <a href="#publication" class="nav__link" data-nav>Publication</a>
+      <a href="#contact" class="nav__link" data-nav>Contact</a>
+    </nav>
+
+    <div class="nav__actions">
+      <a href="#contact" class="btn btn--ghost nav__cta">Let's talk</a>
+
+      <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false" aria-label="Switch to dark theme">
+        <i class="fa-solid fa-moon icon-moon" aria-hidden="true"></i>
+        <i class="fa-solid fa-sun icon-sun" aria-hidden="true"></i>
+      </button>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== Mobile Menu ===== -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home" data-nav>Home</a>
+  <a href="#about" data-nav>About</a>
+  <a href="#experience" data-nav>Experience</a>
+  <a href="#projects" data-nav>Projects</a>
+  <a href="#skills" data-nav>Skills</a>
+  <a href="#education" data-nav>Education</a>
+  <a href="#publication" data-nav>Publication</a>
+  <a href="#contact" data-nav>Contact</a>
+</div>
+
+<main>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="hero__inner">
+      <div class="hero__content reveal">
+        <p class="eyebrow"><span class="eyebrow__dot"></span> Available for opportunities</p>
+        <h1 class="hero__title">
+          <span class="hero__hi">Hi, I'm</span>
+          Harsh Gopinath Chavan
+        </h1>
+        <div class="hero__typewriter">
+          <span class="hero__prompt">&gt;</span>
+          <span id="typewriter"></span><span class="cursor">|</span>
+        </div>
+        <p class="hero__desc">
+          I enjoy building software that is practical, efficient, and user-focused. As a Computer Engineering graduate with an Honours specialization in Data Science,
+          I have a strong interest in Python, data analytics, and creating technology-driven solutions that make a real impact.
+          I'm always eager to learn new tools, take on challenging projects, and grow as a developer.
+        </p>
+        <div class="hero__actions">
+          <a href="Harsh_Chavan_Resume.pdf" download class="btn btn--primary">
+            <i class="fa-solid fa-download"></i> Download Resume
+          </a>
+          <a href="#contact" class="btn btn--outline">
+            <i class="fa-regular fa-paper-plane"></i> Contact Me
+          </a>
+        </div>
+        <div class="hero__socials">
+          <a href="https://github.com/harsh8767" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/harsh-chavan-1646a2257/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="mailto:harshchavan1403@gmail.com" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+          <a href="tel:+918767631646" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
+        </div>
+      </div>
+
+      <div class="hero__visual reveal">
+        <div class="terminal">
+          <div class="terminal__bar">
+            <span class="dot dot--red"></span><span class="dot dot--yellow"></span><span class="dot dot--green"></span>
+            <span class="terminal__title">harsh.py</span>
+          </div>
+          <pre class="terminal__body"><code><span class="tk-kw">class</span> <span class="tk-cls">Developer</span>:
+    <span class="tk-kw">def</span> <span class="tk-fn">__init__</span>(<span class="tk-var">self</span>):
+        <span class="tk-var">self</span>.name = <span class="tk-str">"Harsh Chavan"</span>
+        <span class="tk-var">self</span>.role = <span class="tk-str">"Python Developer"</span>
+        <span class="tk-var">self</span>.stack = [<span class="tk-str">"Python"</span>, <span class="tk-str">"Django"</span>,
+                      <span class="tk-str">"ML"</span>, <span class="tk-str">"Data Science"</span>]
+        <span class="tk-var">self</span>.learning = <span class="tk-bool">True</span>
+
+    <span class="tk-kw">def</span> <span class="tk-fn">say_hello</span>(<span class="tk-var">self</span>):
+        <span class="tk-kw">return</span> <span class="tk-str">f"Let's build something great."</span>
+</code></pre>
+          <div class="terminal__footer">
+            <span class="run-dot"></span> process finished with exit code 0
+          </div>
+        </div>
+        <div class="orbit-badge orbit-badge--1"><i class="fa-brands fa-python"></i></div>
+        <div class="orbit-badge orbit-badge--2"><i class="fa-solid fa-brain"></i></div>
+        <div class="orbit-badge orbit-badge--3"><i class="fa-brands fa-git-alt"></i></div>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-cue" aria-label="Scroll down">
+      <span>Scroll</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </a>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="section" id="about">
+    <div class="section__inner">
+      <p class="section__eyebrow reveal">01 — About</p>
+      <h2 class="section__title reveal">The person behind the code</h2>
+
+      <div class="about__grid">
+        <div class="about__text reveal">
+          <p>
+            I'm a Computer Engineer passionate about software development,
+            machine learning, and data science. I enjoy building intelligent applications
+            using Python, Django, and modern ML libraries — turning messy real-world
+            problems into working, testable software.
+          </p>
+          <p>
+            Outside of coursework, I spend my time shipping small projects end-to-end:
+            from data collection to model to a usable interface. I like the moment a
+            project goes from a scikit-learn notebook to something someone can actually click.
+          </p>
+          <div class="about__stats">
+            <div class="stat">
+              <span class="stat__num" data-count="8">0</span>
+              <span class="stat__label">Projects shipped</span>
+            </div>
+            <div class="stat">
+              <span class="stat__num" data-count="2">0</span>
+              <span class="stat__label">Internships completed</span>
+            </div>
+            <div class="stat">
+              <span class="stat__num" data-count="1">0</span>
+              <span class="stat__label">Published paper</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about__card reveal">
+          <div class="glass-card">
+            <ul class="info-list">
+              <li><i class="fa-regular fa-envelope"></i><span>harshchavan1403@gmail.com</span></li>
+              <li><i class="fa-solid fa-phone"></i><span>+91 8767631646</span></li>
+              <li><i class="fa-solid fa-location-dot"></i><span>Pune, Maharashtra, India</span></li>
+              <li><i class="fa-solid fa-graduation-cap"></i><span>B.E. Computer Engineering, 2022–2026</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <section class="section" id="experience">
+    <div class="section__inner">
+      <p class="section__eyebrow reveal">02 — Experience</p>
+      <h2 class="section__title reveal">Where I've worked</h2>
+
+      <div class="timeline">
+        <div class="timeline__item reveal">
+          <div class="timeline__dot"></div>
+          <div class="glass-card timeline__card">
+            <div class="timeline__head">
+              <div>
+                <h3>Python Developer Intern</h3>
+                <p class="timeline__company">Rubicon Foundation</p>
+              </div>
+              <span class="timeline__date">Jan 2025 – Feb 2025</span>
+            </div>
+            <ul class="timeline__list">
+              <li>Developed database-driven web applications using Python, Django, Django ORM, and MySQL.</li>
+              <li>Designed relational database schemas and implemented backend operations while maintaining data integrity.</li>
+              <li>Built REST APIs with authentication and authorization, and improved reusable backend modules.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline__item reveal">
+          <div class="timeline__dot"></div>
+          <div class="glass-card timeline__card">
+            <div class="timeline__head">
+              <div>
+                <h3>Software Developer Intern</h3>
+                <p class="timeline__company">Elite Software</p>
+              </div>
+              <span class="timeline__date">Dec 2024 – Feb 2025</span>
+            </div>
+            <ul class="timeline__list">
+              <li>Developed and enhanced Python and Django-based web applications by implementing backend features and resolving application issues.</li>
+              <li>Worked with Agile development practices including sprint planning, code reviews, debugging, testing, and deployment.</li>
+              <li>Improved backend logic and database interactions to support application reliability and maintainability.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section class="section" id="projects">
+    <div class="section__inner">
+      <p class="section__eyebrow reveal">03 — Projects</p>
+      <h2 class="section__title reveal">Things I've built</h2>
+
+      <div class="projects__grid">
+
+        <article class="project-card reveal">
+          <div class="project-card__glow"></div>
+          <div class="project-card__icon"><i class="fa-solid fa-chart-pie"></i></div>
+          <h3>AI Data Analyst</h3>
+          <p class="project-card__desc">
+            An AI-powered data analysis platform where users upload datasets and ask questions in
+            natural language. Google Gemini converts questions into structured analysis plans,
+            Pandas executes the analysis, and Plotly renders interactive visualizations, with
+            downloadable PDF reports.
+          </p>
+          <ul class="project-card__tags">
+            <li>Python</li><li>Streamlit</li><li>Google Gemini API</li><li>Pandas</li><li>Plotly</li><li>ReportLab</li>
+          </ul>
+          <div class="project-card__links">
+            <a href="https://github.com/harsh8767/AI-Data-Analyst" target="_blank" rel="noopener" class="btn btn--sm btn--outline"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a href="https://ai-data-analyst-567z.onrender.com/" target="_blank" rel="noopener" class="btn btn--sm btn--primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-card__glow"></div>
+          <div class="project-card__icon"><i class="fa-solid fa-gears"></i></div>
+          <h3>Predictive Maintenance &amp; Equipment Failure Prediction</h3>
+          <p class="project-card__desc">
+            A machine learning system that predicts equipment failures from operating conditions
+            such as temperature, rotational speed, torque, and tool wear — providing failure
+            probability, risk classification, and maintenance recommendations.
+          </p>
+          <ul class="project-card__tags">
+            <li>Python</li><li>Scikit-learn</li><li>Pandas</li><li>Gradient Boosting</li><li>Streamlit</li><li>SQL</li><li>Power BI</li>
+          </ul>
+          <div class="project-card__links">
+            <a href="https://github.com/harsh8767/predictive-maintenance-equipment-failure" target="_blank" rel="noopener" class="btn btn--sm btn--outline"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a href="https://predictive-maintenance-equipment-failure.onrender.com/" target="_blank" rel="noopener" class="btn btn--sm btn--primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-card__glow"></div>
+          <div class="project-card__icon"><i class="fa-solid fa-file-lines"></i></div>
+          <h3>AI Resume Analyzer</h3>
+          <p class="project-card__desc">
+            An AI-powered resume analysis platform that evaluates resumes against job descriptions
+            using Generative AI and NLP — with ATS scoring, keyword analysis, semantic similarity,
+            resume grading, and downloadable PDF reports.
+          </p>
+          <ul class="project-card__tags">
+            <li>Python</li><li>Streamlit</li><li>Google Gemini API</li><li>Scikit-learn</li><li>Pandas</li><li>NLTK</li>
+          </ul>
+          <div class="project-card__links">
+            <a href="https://github.com/harsh8767/AI-Resume-Analyzer" target="_blank" rel="noopener" class="btn btn--sm btn--outline"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a href="https://ai-resume-analyzer-05rf.onrender.com/" target="_blank" rel="noopener" class="btn btn--sm btn--primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-card__glow"></div>
+          <div class="project-card__icon"><i class="fa-solid fa-users"></i></div>
+          <h3>Workforce Intelligence — HR Analytics</h3>
+          <p class="project-card__desc">
+            An HR analytics solution analyzing workforce trends, employee attrition, demographics,
+            and job roles, combining SQL-based analysis with an interactive Power BI dashboard for
+            actionable workforce insights.
+          </p>
+          <ul class="project-card__tags">
+            <li>SQL Server</li><li>T-SQL</li><li>Power BI</li><li>DAX</li><li>Python</li>
+          </ul>
+          <div class="project-card__links">
+            <a href="https://github.com/harsh8767/Workforce-Intelligence-HR-Analytics" target="_blank" rel="noopener" class="btn btn--sm btn--outline"><i class="fa-brands fa-github"></i> GitHub</a>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-card__glow"></div>
+          <div class="project-card__icon"><i class="fa-solid fa-store"></i></div>
+          <h3>Retail Sales Analytics</h3>
+          <p class="project-card__desc">
+            An end-to-end retail analytics solution using SQL Server for data preparation and
+            Power BI for interactive dashboards, KPI tracking, DAX-based metrics, and business
+            reporting on sales, products, and regional trends.
+          </p>
+          <ul class="project-card__tags">
+            <li>SQL Server</li><li>T-SQL</li><li>Power BI</li><li>DAX</li><li>Data Modeling</li><li>ETL</li>
+          </ul>
+          <div class="project-card__links">
+            <a href="https://github.com/harsh8767/Retail-Sales-Analytics" target="_blank" rel="noopener" class="btn btn--sm btn--outline"><i class="fa-brands fa-github"></i> GitHub</a>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-card__glow"></div>
+          <div class="project-card__icon"><i class="fa-solid fa-route"></i></div>
+          <h3>Uber Fare Prediction</h3>
+          <p class="project-card__desc">
+            A machine learning application predicting Uber fares from trip-related and geographic
+            information, combining predictive modeling with interactive geospatial visualization
+            through a Streamlit app.
+          </p>
+          <ul class="project-card__tags">
+            <li>Python</li><li>Pandas</li><li>Scikit-learn</li><li>Machine Learning</li><li>Streamlit</li><li>Geospatial Analysis</li>
+          </ul>
+          <div class="project-card__links">
+            <a href="https://github.com/harsh8767/Uber-Fare-Prediction" target="_blank" rel="noopener" class="btn btn--sm btn--outline"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a href="https://uber-fare-prediction-b75r.onrender.com/" target="_blank" rel="noopener" class="btn btn--sm btn--primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-card__glow"></div>
+          <div class="project-card__icon"><i class="fa-solid fa-film"></i></div>
+          <h3>CineMatch</h3>
+          <p class="project-card__desc">
+            A content-based movie recommendation engine built on a dataset of 5,000+ movies,
+            using NLP-based feature extraction with CountVectorizer and cosine similarity to
+            generate personalized recommendations via an interactive Streamlit app.
+          </p>
+          <ul class="project-card__tags">
+            <li>Python</li><li>Scikit-learn</li><li>Pandas</li><li>Streamlit</li><li>NLP</li><li>TMDB API</li>
+          </ul>
+          <div class="project-card__links">
+            <a href="https://github.com/harsh8767/CineMatch" target="_blank" rel="noopener" class="btn btn--sm btn--outline"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a href="https://harsh-cinematch.onrender.com/" target="_blank" rel="noopener" class="btn btn--sm btn--primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-card__glow"></div>
+          <div class="project-card__icon"><i class="fa-solid fa-plane"></i></div>
+          <h3>Airline Reservation System</h3>
+          <p class="project-card__desc">
+            A console-based reservation system handling flight booking, passenger management,
+            and bill generation — built with file handling and object-oriented design for a
+            modular, maintainable codebase.
+          </p>
+          <ul class="project-card__tags">
+            <li>C++</li><li>OOP</li><li>File Handling</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section class="section" id="skills">
+    <div class="section__inner">
+      <p class="section__eyebrow reveal">04 — Skills</p>
+      <h2 class="section__title reveal">What I work with</h2>
+
+      <div class="skills__grid">
+
+        <div class="skill-card reveal">
+          <div class="skill-card__head"><i class="fa-solid fa-code"></i><h3>Programming</h3></div>
+          <div class="skill-card__chips">
+            <span><i class="fa-brands fa-python"></i>Python</span>
+            <span><i class="fa-solid fa-c"></i>C++</span>
+            <span><i class="fa-brands fa-java"></i>Java</span>
+            <span><i class="fa-solid fa-database"></i>SQL</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-card__head"><i class="fa-solid fa-brain"></i><h3>AI / Machine Learning</h3></div>
+          <div class="skill-card__chips">
+            <span>Scikit-learn</span>
+            <span>TensorFlow / Keras</span>
+            <span>NLP</span>
+            <span>NLTK</span>
+            <span>Generative AI</span>
+            <span>Google Gemini API</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-card__head"><i class="fa-solid fa-chart-line"></i><h3>Data Science / Analytics</h3></div>
+          <div class="skill-card__chips">
+            <span>Pandas</span>
+            <span>NumPy</span>
+            <span>Matplotlib</span>
+            <span>Seaborn</span>
+            <span>Plotly</span>
+            <span>Power BI</span>
+            <span>DAX</span>
+            <span>Microsoft Excel</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-card__head"><i class="fa-solid fa-server"></i><h3>Web / Databases</h3></div>
+          <div class="skill-card__chips">
+            <span><i class="fa-solid fa-layer-group"></i>Django</span>
+            <span>Streamlit</span>
+            <span>REST APIs</span>
+            <span>MySQL</span>
+            <span>SQL Server</span>
+            <span>T-SQL</span>
+            <span>MongoDB</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-card__head"><i class="fa-brands fa-git-alt"></i><h3>Tools / Concepts</h3></div>
+          <div class="skill-card__chips">
+            <span><i class="fa-solid fa-code-branch"></i>Git</span>
+            <span><i class="fa-brands fa-github"></i>GitHub</span>
+            <span>Jupyter Notebook</span>
+            <span>VS Code</span>
+            <span>OOP</span>
+            <span>Data Structures</span>
+            <span>Agile</span>
+            <span>SDLC</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EDUCATION ===== -->
+  <section class="section" id="education">
+    <div class="section__inner">
+      <p class="section__eyebrow reveal">05 — Education</p>
+      <h2 class="section__title reveal">Academic Background</h2>
+
+      <div class="timeline">
+        <div class="timeline__item reveal">
+          <div class="timeline__dot"></div>
+          <div class="glass-card timeline__card">
+            <div class="timeline__head">
+              <div>
+                <h3>Bachelor of Engineering — Computer Engineering</h3>
+                <p class="timeline__company">Zeal College of Engineering and Research · Savitribai Phule Pune University · Honours Specialization: Data Science</p>
+              </div>
+              <span class="timeline__date">2022 – 2026</span>
+            </div>
+            <div class="timeline__metrics">
+              <div class="metric">
+                <span class="metric__num">7.55</span>
+                <span class="metric__label">CGPA / 10</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PUBLICATION ===== -->
+  <section class="section" id="publication">
+    <div class="section__inner">
+      <p class="section__eyebrow reveal">06 — Publication</p>
+      <h2 class="section__title reveal">Published research</h2>
+
+      <div class="pub-card reveal">
+        <div class="pub-card__icon"><i class="fa-solid fa-book-open"></i></div>
+        <div class="pub-card__body">
+          <h3>Automatic Vehicle Speed Control</h3>
+          <p class="pub-card__journal">
+            International Journal of Scientific Research in Engineering and Management (IJSREM)
+          </p>
+          <p class="pub-card__desc">
+            Developed an automatic vehicle speed control system for restricted zones using
+            embedded systems and infrared sensors to improve road safety.
+          </p>
+          <div class="pub-card__meta">
+            <span class="pub-card__doi">DOI: 10.55041/IJSREM64991</span>
+            <a href="https://doi.org/10.55041/IJSREM64991" target="_blank" rel="noopener" class="btn btn--sm btn--outline">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> View DOI
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section" id="contact">
+    <div class="section__inner">
+      <p class="section__eyebrow reveal">07 — Contact</p>
+      <h2 class="section__title reveal">Let's build something</h2>
+      <p class="section__sub reveal">Have a role, project, or idea in mind? My inbox is open.</p>
+
+      <div class="contact__grid">
+        <div class="contact__info reveal">
+          <a href="mailto:harshchavan1403@gmail.com" class="contact__item">
+            <span class="contact__icon"><i class="fa-regular fa-envelope"></i></span>
+            <span>
+              <strong>Email</strong>
+              <em>harshchavan1403@gmail.com</em>
+            </span>
+          </a>
+          <a href="tel:+918767631646" class="contact__item">
+            <span class="contact__icon"><i class="fa-solid fa-phone"></i></span>
+            <span>
+              <strong>Phone</strong>
+              <em>+91 8767631646</em>
+            </span>
+          </a>
+          <a href="https://github.com/harsh8767" target="_blank" rel="noopener" class="contact__item">
+            <span class="contact__icon"><i class="fa-brands fa-github"></i></span>
+            <span>
+              <strong>GitHub</strong>
+              <em>github.com/harsh8767</em>
+            </span>
+          </a>
+          <a href="https://www.linkedin.com/in/harsh-chavan-1646a2257/" target="_blank" rel="noopener" class="contact__item">
+            <span class="contact__icon"><i class="fa-brands fa-linkedin-in"></i></span>
+            <span>
+              <strong>LinkedIn</strong>
+              <em>linkedin.com/in/harsh-chavan-1646a2257</em>
+            </span>
+          </a>
+        </div>
+
+        <form class="contact__form glass-card reveal" id="contactForm">
+          <!-- Web3Forms: replace YOUR_ACCESS_KEY_HERE with your real key from web3forms.com -->
+          <input type="hidden" name="access_key" value="671fbf54-03ae-4b93-929e-2919be1ec161">
+          <input type="hidden" name="subject" value="New message from portfolio site">
+          <input type="checkbox" name="botcheck" class="hidden-field" style="display:none">
+
+          <div class="form__row">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="form__row">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+          </div>
+          <div class="form__row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary form__submit">
+            <span class="btn-text">Send Message</span>
+            <i class="fa-regular fa-paper-plane"></i>
+          </button>
+          <p class="form__note" id="formNote"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer__inner">
+    <p>Designed &amp; developed by <strong>Harsh Gopinath Chavan</strong></p>
+    <div class="footer__socials">
+      <a href="https://github.com/harsh8767" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/harsh-chavan-1646a2257/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="mailto:harshchavan1403@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+    </div>
+    <p class="footer__year">&copy; <span id="year"></span> All rights reserved.</p>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>
